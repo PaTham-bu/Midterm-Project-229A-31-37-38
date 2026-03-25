@@ -530,8 +530,8 @@ MonoBehaviour:
 
     
 
-    [Your
-    Studio Name]
+    [Ingame
+    Interactive]
 
     
 
@@ -543,23 +543,24 @@ MonoBehaviour:
 
     
 
-    [Name 1]
+    [PANNAWIT
+    THAMTEERAPITAK]
+
+    Role: [e.g. Programmer / Game Designer]
+
+    
+
+    [NATCHANONE
+    THONGDEE]
+
+    Role: [e.g. Artist / UI Designer]
+
+    
+
+    [WASUTEP KHUNNUI]
 
     Role:
-    [e.g. Programmer / Game Designer]
-
-    
-
-    [Name 2]
-
-    Role: [e.g. Artist
-    / UI Designer]
-
-    
-
-    [Name 3]
-
-    Role: [e.g. Sound Designer / QA]
+    [e.g. Game Designer / QA]
 
     
 
@@ -567,12 +568,12 @@ MonoBehaviour:
 
     
 
-    SPECIAL
-    THANKS
+    SPECIAL THANKS
 
     
 
-    Family & Friends
+    Family
+    & Friends
 
     Unity Community
 
@@ -582,16 +583,27 @@ MonoBehaviour:
 
     
 
-    TOOLS
-    USED
+    TOOLS USED
 
     
 
-    Unity Engine
+    Unity
+    Engine
 
     Visual Studio
 
-    Adobe / Blender / etc.
+    
+
+    ---
+
+    
+
+    MUSIC & SOUND
+
+    
+
+    [If
+    you used free assets, credit here]
 
     
 
@@ -599,21 +611,7 @@ MonoBehaviour:
 
     
 
-    MUSIC
-    & SOUND
-
-    
-
-    [If you used free assets, credit here]
-
-    
-
-    ---
-
-    
-
-    THE
-    END'
+    THE END'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
