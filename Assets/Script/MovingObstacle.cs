@@ -1,0 +1,22 @@
+using UnityEngine;
+
+public class MovingObstacle : MonoBehaviour
+{
+    public Vector3 moveDirection = Vector3.right;
+    public float moveDistance = 3f;
+    public float speed = 2f;
+
+    private Vector3 startPosition;
+
+    void Start()
+    {
+        startPosition = transform.position;
+    }
+
+    void Update()
+    {
+        float offset = Mathf.PingPong(Time.time * speed, moveDistance * 2) - moveDistance;
+
+        transform.position = startPosition + moveDirection.normalized * offset;
+    }
+}

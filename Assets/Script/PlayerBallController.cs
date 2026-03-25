@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
 public class PlayerBallController : MonoBehaviour
@@ -31,6 +31,14 @@ public class PlayerBallController : MonoBehaviour
         LimitSideSpeed();
     }
 
+    void Update()
+    {
+        // If player falls below certain height → lose
+        if (transform.position.y < 10f)
+        {
+            GameOver();
+        }
+    }
     void HandleMovement()
     {
         float moveX = 0f;
