@@ -34,7 +34,7 @@ public class PlayerBallController : MonoBehaviour
     void Update()
     {
         // If player falls below certain height → lose
-        if (transform.position.y < 10f)
+        if (transform.position.y < -10f)
         {
             GameOver();
         }
