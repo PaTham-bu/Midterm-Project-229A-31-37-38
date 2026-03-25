@@ -1,7 +1,7 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Rigidbody))]
-public class PlayerController : MonoBehaviour
+public class PlayerBallController : MonoBehaviour
 {
     [Header("Movement Settings")]
     public float sideForce = 150f;        // How strong A/D movement is
