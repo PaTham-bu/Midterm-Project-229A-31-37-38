@@ -12,6 +12,9 @@ public class PlayerBallController : MonoBehaviour
     public float speedMultiplier = 1f;
     public float speedIncreaseRate = 0.1f;
 
+    [Header("Speed Cap")]
+    public float maxSpeedMultiplier = 3f;
+
     private Rigidbody rb;
 
     void Start()
@@ -28,7 +31,7 @@ public class PlayerBallController : MonoBehaviour
     {
         HandleMovement();
         IncreaseDifficulty();
-        LimitSideSpeed();
+        LimitVelocity();
     }
 
     void Update()
@@ -60,16 +63,22 @@ public class PlayerBallController : MonoBehaviour
 
     void IncreaseDifficulty()
     {
-        // Gradually increase speed over time
         speedMultiplier += speedIncreaseRate * Time.fixedDeltaTime;
+
+        // 🔥 CAP SPEED HERE
+        speedMultiplier = Mathf.Clamp(speedMultiplier, 1f, maxSpeedMultiplier);
     }
 
-    void LimitSideSpeed()
+    void LimitVelocity()
     {
-        // Prevent player from sliding too fast sideways
         Vector3 velocity = rb.velocity;
 
+        // Limit sideways
         velocity.x = Mathf.Clamp(velocity.x, -maxSideSpeed, maxSideSpeed);
+
+        // 🔥 Limit forward speed
+        float maxForwardSpeed = forwardForce * maxSpeedMultiplier;
+        velocity.z = Mathf.Clamp(velocity.z, 0f, maxForwardSpeed);
 
         rb.velocity = velocity;
     }

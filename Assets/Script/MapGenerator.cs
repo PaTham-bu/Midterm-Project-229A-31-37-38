@@ -1,21 +1,18 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections.Generic;
 
 public class MapGenerator : MonoBehaviour
 {
-    public GameObject platformPrefab;
+    public GameObject[] platformPrefabs;
     public Transform player;
 
     public int platformsOnScreen = 6;
-    public float platformLength = 20f;
 
-    private float spawnZ = 0f;
     private List<GameObject> platforms = new List<GameObject>();
+    private Vector3 nextSpawnPosition = Vector3.zero;
 
     void Start()
     {
-        Debug.Log("START WORKING");
-
         for (int i = 0; i < platformsOnScreen; i++)
         {
             SpawnPlatform();
@@ -24,36 +21,47 @@ public class MapGenerator : MonoBehaviour
 
     void Update()
     {
-        if (player.position.z > spawnZ - (platformsOnScreen * platformLength))
+        if (player.position.z > nextSpawnPosition.z - 50f)
         {
             SpawnPlatform();
         }
 
-        if (platforms.Count > 0)
+        if (platforms.Count > platformsOnScreen)
         {
-            if (player.position.z - platforms[0].transform.position.z > platformLength * 2)
-            {
-                DeletePlatform();
-            }
+            Destroy(platforms[0]);
+            platforms.RemoveAt(0);
         }
     }
 
     void SpawnPlatform()
     {
-        Debug.Log("Spawn at Z: " + spawnZ);
+        if (platformPrefabs.Length == 0)
+        {
+            Debug.LogError("No platform prefabs!");
+            return;
+        }
 
-        Vector3 pos = new Vector3(0, 0, spawnZ);
+        GameObject prefab = platformPrefabs[Random.Range(0, platformPrefabs.Length)];
 
-        GameObject newPlatform = Instantiate(platformPrefab, pos, Quaternion.identity);
+        GameObject newPlatform = Instantiate(prefab, nextSpawnPosition, Quaternion.identity);
 
         platforms.Add(newPlatform);
 
-        spawnZ += platformLength;
+        // 🔥 Move spawn position forward using REAL size
+        float length = GetPlatformLength(newPlatform);
+        nextSpawnPosition += Vector3.forward * length;
     }
 
-    void DeletePlatform()
+    float GetPlatformLength(GameObject obj)
     {
-        Destroy(platforms[0]);
-        platforms.RemoveAt(0);
+        Collider col = obj.GetComponent<Collider>();
+
+        if (col == null)
+        {
+            Debug.LogError("Platform has no collider!");
+            return 20f;
+        }
+
+        return col.bounds.size.z;
     }
 }
