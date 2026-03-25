@@ -65,4 +65,23 @@ public class PlayerBallController : MonoBehaviour
 
         rb.velocity = velocity;
     }
+
+    void GameOver()
+    {
+        Debug.Log("Game Over!");
+
+        // Stop time
+        Time.timeScale = 0f;
+
+        // Optional: destroy player
+        // Destroy(gameObject);
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Obstacle"))
+        {
+            GameOver();
+        }
+    }
 }
