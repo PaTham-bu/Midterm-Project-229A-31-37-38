@@ -1,14 +1,15 @@
-using UnityEngine;
+﻿using UnityEngine;
 using TMPro;
 
 public class EndCreditsManager : MonoBehaviour
 {
     public TextMeshProUGUI finalTimeText;
+    public GameObject buttonsPanel;
 
     void Start()
     {
-        // Hide at start
         finalTimeText.gameObject.SetActive(false);
+        buttonsPanel.SetActive(false);
     }
 
     public void ShowFinalTime()
@@ -22,5 +23,6 @@ public class EndCreditsManager : MonoBehaviour
             minutes.ToString("00") + ":" + seconds.ToString("00");
 
         finalTimeText.gameObject.SetActive(true);
+        buttonsPanel.SetActive(true);
     }
 }

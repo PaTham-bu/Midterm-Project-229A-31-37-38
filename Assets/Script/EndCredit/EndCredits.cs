@@ -2,9 +2,9 @@
 
 public class EndCredits : MonoBehaviour
 {
-    public float scrollSpeed = 40f;
+    public float scrollSpeed = 45f;
     public float endY = 2000f;     // adjust this
-    public float delay = 6f;       // delay before showing time
+    public float delay = 15f;       // delay before showing time
 
     private RectTransform rectTransform;
     private bool hasFinished = false;
@@ -23,7 +23,7 @@ public class EndCredits : MonoBehaviour
         {
             hasFinished = true;
 
-            // Delay the final time display
+            // 👉 Delay the final time display
             Invoke("ShowFinalTime", delay);
         }
     }
