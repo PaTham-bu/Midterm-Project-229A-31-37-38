@@ -271,7 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EndCredits
   scrollSpeed: 45
   endY: 2000
-  delay: 15
+  delay: 17
 --- !u!1 &221368654
 GameObject:
   m_ObjectHideFlags: 0
@@ -876,6 +876,8 @@ GameObject:
   - component: {fileID: 1409392974}
   - component: {fileID: 1409392973}
   - component: {fileID: 1409392972}
+  - component: {fileID: 1409392976}
+  - component: {fileID: 1409392975}
   m_Layer: 5
   m_Name: Retry
   m_TagString: Untagged
@@ -946,7 +948,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1409392973}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1409392975}
+        m_TargetAssemblyTypeName: SceneLoader, Assembly-CSharp
+        m_MethodName: LoadScene
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: MainGame
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1409392973
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -985,6 +999,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1409392970}
   m_CullTransparentMesh: 1
+--- !u!114 &1409392975
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409392970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 93766756132bdc34b8b03635f635817c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SceneLoader
+--- !u!114 &1409392976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1409392970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0f71bfd26cbc4324b891bcc1235cf0f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::MainMenu
 --- !u!1 &1430524096
 GameObject:
   m_ObjectHideFlags: 0
@@ -1454,7 +1492,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EndCredits
   scrollSpeed: 45
   endY: 2000
-  delay: 15
+  delay: 17
 --- !u!1 &1622367595
 GameObject:
   m_ObjectHideFlags: 0
@@ -1814,7 +1852,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EndCredits
   scrollSpeed: 45
   endY: 2000
-  delay: 15
+  delay: 17
 --- !u!1 &1995556292
 GameObject:
   m_ObjectHideFlags: 0
@@ -1827,6 +1865,7 @@ GameObject:
   - component: {fileID: 1995556296}
   - component: {fileID: 1995556295}
   - component: {fileID: 1995556294}
+  - component: {fileID: 1995556297}
   m_Layer: 5
   m_Name: Exit
   m_TagString: Untagged
@@ -1897,7 +1936,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1995556295}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1995556297}
+        m_TargetAssemblyTypeName: QuitExit, Assembly-CSharp
+        m_MethodName: Quit
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1995556295
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1936,6 +1987,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1995556292}
   m_CullTransparentMesh: 1
+--- !u!114 &1995556297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1995556292}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 608738a3ab9e8e54b94472f834591fee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::QuitExit
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
