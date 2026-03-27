@@ -702,15 +702,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1122273440301166577, guid: f7507a5d34de7724687e47b5dcf59e53, type: 3}
       propertyPath: m_Mass
-      value: 1.5
+      value: 1.75
       objectReference: {fileID: 0}
     - target: {fileID: 3810096023560144503, guid: f7507a5d34de7724687e47b5dcf59e53, type: 3}
       propertyPath: speedIncreaseRate
-      value: 0.001
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3810096023560144503, guid: f7507a5d34de7724687e47b5dcf59e53, type: 3}
       propertyPath: maxSpeedMultiplier
-      value: 3
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 5468628370551290976, guid: f7507a5d34de7724687e47b5dcf59e53, type: 3}
       propertyPath: m_Name
@@ -808,8 +808,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::MapGenerator
   player: {fileID: 1314142565}
   trackPrefabs:
-  - {fileID: 548351307588044606, guid: 5e846b50e7c8a2b4c9c3e03af836889a, type: 3}
   - {fileID: 5675183989725045526, guid: c85e3d90cc0281e40948cef19c95dd14, type: 3}
+  - {fileID: 548351307588044606, guid: 5e846b50e7c8a2b4c9c3e03af836889a, type: 3}
   - {fileID: 1226507023005915293, guid: 4a4de8ae9383ea947b29deed83dd551d, type: 3}
   - {fileID: 2886052956805084417, guid: 21abb201431888c4e92a741d454b2f00, type: 3}
   - {fileID: 6760474642950953648, guid: 73f32c00036f9dc4194d4a137e13ebfe, type: 3}
