@@ -37,7 +37,7 @@ public class PlayerBallController : MonoBehaviour
     void Update()
     {
         // If player falls below certain height → lose
-        if (transform.position.y < -10f)
+        if (transform.position.y < -40f)
         {
             GameOver();
         }
@@ -65,7 +65,7 @@ public class PlayerBallController : MonoBehaviour
     {
         speedMultiplier += speedIncreaseRate * Time.fixedDeltaTime;
 
-        // 🔥 CAP SPEED HERE
+        // CAP SPEED HERE
         speedMultiplier = Mathf.Clamp(speedMultiplier, 1f, maxSpeedMultiplier);
     }
 
@@ -76,7 +76,7 @@ public class PlayerBallController : MonoBehaviour
         // Limit sideways
         velocity.x = Mathf.Clamp(velocity.x, -maxSideSpeed, maxSideSpeed);
 
-        // 🔥 Limit forward speed
+        // Limit forward speed
         float maxForwardSpeed = forwardForce * maxSpeedMultiplier;
         velocity.z = Mathf.Clamp(velocity.z, 0f, maxForwardSpeed);
 
