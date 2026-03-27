@@ -130,7 +130,7 @@ GameObject:
   - component: {fileID: 61676844}
   - component: {fileID: 61676847}
   - component: {fileID: 61676846}
-  - component: {fileID: 61676845}
+  - component: {fileID: 61676848}
   m_Layer: 5
   m_Name: Title Text
   m_TagString: Untagged
@@ -157,19 +157,6 @@ RectTransform:
   m_AnchoredPosition: {x: 14, y: -414}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &61676845
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 61676843}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b926c81c1ae41be408323dc2a1f22bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EndCredits
-  scrollSpeed: 40
 --- !u!114 &61676846
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,6 +257,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 61676843}
   m_CullTransparentMesh: 1
+--- !u!114 &61676848
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 61676843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b1b8ce366851c4698997d2850bd009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndCredits
+  scrollSpeed: 45
 --- !u!1 &1079859988
 GameObject:
   m_ObjectHideFlags: 0
@@ -462,7 +462,7 @@ GameObject:
   - component: {fileID: 1543209959}
   - component: {fileID: 1543209962}
   - component: {fileID: 1543209961}
-  - component: {fileID: 1543209960}
+  - component: {fileID: 1543209963}
   m_Layer: 5
   m_Name: Credit Text
   m_TagString: Untagged
@@ -489,19 +489,6 @@ RectTransform:
   m_AnchoredPosition: {x: 21, y: -1226.8239}
   m_SizeDelta: {x: 1209.1888, y: 1426.5581}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1543209960
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543209958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b926c81c1ae41be408323dc2a1f22bcd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::EndCredits
-  scrollSpeed: 40
 --- !u!114 &1543209961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -524,92 +511,97 @@ MonoBehaviour:
       m_Calls: []
   m_text: '=== THANK YOU FOR PLAYING ===
 
-    
+
 
     A Game By
 
-    
 
-    [Ingame
-    Interactive]
 
-    
+    [PhysicsSoFunLa]
+
+
 
     ---
 
-    
 
-    DEVELOPED BY
 
-    
+    DEVELOPED
+    BY
 
-    [PANNAWIT
-    THAMTEERAPITAK]
+
+
+    [PANNAWIT THAMTEERAPITAK]
 
     Role: [e.g. Programmer / Game Designer]
 
-    
+
 
     [NATCHANONE
     THONGDEE]
 
-    Role: [e.g. Artist / UI Designer]
+    Role: [e.g. Credit / UI Designer]
 
-    
+
 
     [WASUTEP KHUNNUI]
 
     Role:
     [e.g. Game Designer / QA]
 
-    
+
 
     ---
 
-    
+
 
     SPECIAL THANKS
 
-    
 
-    Family
-    & Friends
 
-    Unity Community
+    Family & Friends
 
-    
+    Unity
+    Community
+
+    Visual Studio Community
+
+    ChatGPT
+
+
 
     ---
 
-    
+
 
     TOOLS USED
 
-    
+
 
     Unity
     Engine
 
     Visual Studio
 
-    
+    ChatGPT
+
+
 
     ---
 
-    
+
 
     MUSIC & SOUND
 
-    
+
 
     [If
     you used free assets, credit here]
 
-    
+
 
     ---
 
-    
+
 
     THE END'
   m_isRightToLeft: 0
@@ -691,6 +683,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1543209958}
   m_CullTransparentMesh: 1
+--- !u!114 &1543209963
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1543209958}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8b1b8ce366851c4698997d2850bd009, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EndCredits
+  scrollSpeed: 45
 --- !u!1 &1622367595
 GameObject:
   m_ObjectHideFlags: 0

@@ -318,7 +318,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8680906879011842935, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
   m_PrefabInstance: {fileID: 1972880854}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1638339997
+--- !u!114 &1638339994
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -327,9 +327,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1638339992}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3775bd96eae031c46b37604ba2dca048, type: 3}
+  m_Script: {fileID: 11500000, guid: 608738a3ab9e8e54b94472f834591fee, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::QuitGameS
+  m_EditorClassIdentifier: Assembly-CSharp::QuitExit
 --- !u!1001 &1972880854
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -533,7 +533,7 @@ PrefabInstance:
     - target: {fileID: 8680906879011842937, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 646518481}
+      objectReference: {fileID: 1638339994}
     - target: {fileID: 8680906879011842937, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
@@ -544,7 +544,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8680906879011842937, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: QuitGameS, Assembly-CSharp
+      value: QuitExit, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8680906879011842937, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_StringArgument
@@ -678,7 +678,7 @@ PrefabInstance:
       addedObject: {fileID: 2006793995}
     - targetCorrespondingSourceObject: {fileID: 8680906879011842935, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1638339997}
+      addedObject: {fileID: 1638339994}
     - targetCorrespondingSourceObject: {fileID: 8680906879491435108, guid: 8bda2b229956441329797aa7bc0d180f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 646518481}
