@@ -17,7 +17,7 @@ public class PlayerBallController : MonoBehaviour
     public float maxSpeedMultiplier = 3f;
 
     [Header("Fall Settings")]
-    public float fallYLimit = -100f;      // 🔥 Adjust this value
+    public float fallYLimit = -100f;      // Adjust this value
 
     private Rigidbody rb;
 
