@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 public class PlayerBallController : MonoBehaviour
 {
     [Header("Movement Settings")]
-    public float sideForce = 150f;        // How strong A/D movement is
-    public float forwardForce = 20f;      // Small forward boost
-    public float maxSideSpeed = 10f;      // Limit left/right speed
+    public float sideForce = 150f;        // A/D movement strength
+    public float forwardForce = 20f;      // Forward push
+    public float maxSideSpeed = 10f;      // Clamp left/right speed
 
     [Header("Speed Scaling")]
     public float speedMultiplier = 1f;
@@ -16,13 +16,16 @@ public class PlayerBallController : MonoBehaviour
     [Header("Speed Cap")]
     public float maxSpeedMultiplier = 3f;
 
+    [Header("Fall Settings")]
+    public float fallYLimit = -100f;      // 🔥 Adjust this value
+
     private Rigidbody rb;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-        // Recommended Rigidbody settings
+        // Rigidbody settings
         rb.drag = 0f;
         rb.angularDrag = 0.05f;
         rb.useGravity = true;
@@ -37,36 +40,29 @@ public class PlayerBallController : MonoBehaviour
 
     void Update()
     {
-        // If player falls below certain height → lose
-        if (transform.position.y < -50f)
-        {
-            GameOver();
-        }
+        CheckFall();
     }
+
     void HandleMovement()
     {
         float moveX = 0f;
 
-        // A = left
         if (Input.GetKey(KeyCode.A))
             moveX = -1f;
 
-        // D = right
         if (Input.GetKey(KeyCode.D))
             moveX = 1f;
 
-        // Apply sideways force
+        // Side movement
         rb.AddForce(Vector3.right * moveX * sideForce * speedMultiplier);
 
-        // Small forward force (keeps game fast like Slope)
+        // Forward movement
         rb.AddForce(Vector3.forward * forwardForce);
     }
 
     void IncreaseDifficulty()
     {
         speedMultiplier += speedIncreaseRate * Time.fixedDeltaTime;
-
-        // CAP SPEED HERE
         speedMultiplier = Mathf.Clamp(speedMultiplier, 1f, maxSpeedMultiplier);
     }
 
@@ -74,21 +70,29 @@ public class PlayerBallController : MonoBehaviour
     {
         Vector3 velocity = rb.velocity;
 
-        // Limit sideways
+        // Clamp side speed
         velocity.x = Mathf.Clamp(velocity.x, -maxSideSpeed, maxSideSpeed);
 
-        // Limit forward speed
+        // Clamp forward speed
         float maxForwardSpeed = forwardForce * maxSpeedMultiplier;
         velocity.z = Mathf.Clamp(velocity.z, 0f, maxForwardSpeed);
 
         rb.velocity = velocity;
     }
 
+    void CheckFall()
+    {
+        if (transform.position.y < fallYLimit)
+        {
+            GameOver();
+        }
+    }
+
     void GameOver()
     {
         Debug.Log("Game Over!");
 
-        // Get time from your timer script
+        // Save final time
         GameTimer timer = FindObjectOfType<GameTimer>();
 
         if (timer != null)
@@ -102,12 +106,7 @@ public class PlayerBallController : MonoBehaviour
             Debug.LogWarning("GameTimer not found!");
         }
 
-        SceneManager.LoadScene("End Credits");
-    }
-
-    void LoadEndCredits()
-    {
-        Time.timeScale = 1f;
+        // Load End Credits
         SceneManager.LoadScene("End Credits");
     }
 
